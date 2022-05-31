@@ -4,9 +4,6 @@ out vec4 FragColor;
 in vec2 Color;
 in vec2 Pos;
 
-uniform sampler2D screenTexture;
-
-
 #define MAX_BALL_LENGTH 32
 uniform vec2 balls[MAX_BALL_LENGTH];
 uniform float radius[MAX_BALL_LENGTH];
