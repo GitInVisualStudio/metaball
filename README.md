@@ -10,7 +10,7 @@ You can change the number of balls and other factors easily in ```main.cpp:34```
 Metaballs* metaballs = new Metaballs(
     WINDOW_WIDTH, WINDOW_HEIGHT, "./shader/shader.fs",
     10.0,   //scale
-    0.2,    //threshold determins the line width
+    0.2,    //threshold determines the line width
     10      //number of balls
 );
 ```
