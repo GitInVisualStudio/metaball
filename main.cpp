@@ -31,7 +31,12 @@ int main(){
     Window window("test window", WINDOW_WIDTH, WINDOW_HEIGHT, window_resize);
 
     // must be on memory, so we can free it within this scope and terminate correctly
-    Metaballs* metaballs = new Metaballs(WINDOW_WIDTH, WINDOW_HEIGHT, "shader/framebuffer/shader.fs", 10.0, 0.2, 10);
+    Metaballs* metaballs = new Metaballs(
+        WINDOW_WIDTH, WINDOW_HEIGHT, "./shader/shader.fs",
+        10.0,   //scale
+        0.2,    //threshold
+        10      //number of balls
+    );
 
     float lastTime = glfwGetTime();
     float time = glfwGetTime();

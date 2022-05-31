@@ -58,7 +58,7 @@ Metaballs::Metaballs(int width, int height, const char* fs_shader, float scale, 
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)(sizeof(float) * 2));
     glEnableVertexAttribArray(1);
 
-    shader = new Shader("shader/framebuffer/shader.vs", fs_shader);
+    shader = new Shader("shader/shader.vs", fs_shader);
     shader->use();
 
     //set random seed
