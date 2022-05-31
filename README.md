@@ -42,6 +42,6 @@ to compile and run the project.
 
 # Sources
 
-Checkout [Reducible](https://www.youtube.com/watch?v=6oMZb3yP_H8) for his amazing explanation about implizit functions and metaballs.
+Checkout [Reducible](https://www.youtube.com/watch?v=6oMZb3yP_H8) for his amazing explanation about implicit functions and metaballs.
 
 If you want to better understand the OpenGL code written in this repo, checkout [Joey de Vries](https://learnopengl.com/) blog about OpenGL, it's truly amazing and helped me alot.
