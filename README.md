@@ -10,7 +10,7 @@ You can change the number of balls and other factors easily in ```main.cpp:34```
 Metaballs* metaballs = new Metaballs(
     WINDOW_WIDTH, WINDOW_HEIGHT, "./shader/shader.fs",
     10.0,   //scale
-    0.2,    //threshold determins the line width
+    0.2,    //threshold determines the line width
     10      //number of balls
 );
 ```
@@ -42,6 +42,6 @@ to compile and run the project.
 
 # Sources
 
-Checkout [Reducible](https://www.youtube.com/watch?v=6oMZb3yP_H8) for his amazing explanation about implizit functions and metaballs.
+Checkout [Reducible](https://www.youtube.com/watch?v=6oMZb3yP_H8) for his amazing explanation about implicit functions and metaballs.
 
 If you want to better understand the OpenGL code written in this repo, checkout [Joey de Vries](https://learnopengl.com/) blog about OpenGL, it's truly amazing and helped me alot.
