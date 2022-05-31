@@ -34,7 +34,7 @@ int main(){
     Metaballs* metaballs = new Metaballs(
         WINDOW_WIDTH, WINDOW_HEIGHT, "./shader/shader.fs",
         10.0,   //scale
-        0.2,    //threshold
+        0.2,    //threshold determins the line width
         10      //number of balls
     );
 
