@@ -25,10 +25,13 @@ void processInput(GLFWwindow* window){
 }
 
 int main(){
+    /**
+     * create OpenGL context
+     */
     Window window("test window", WINDOW_WIDTH, WINDOW_HEIGHT, window_resize);
 
     // must be on memory, so we can free it within this scope and terminate correctly
-    Metaballs* metaballs = new Metaballs(WINDOW_WIDTH, WINDOW_HEIGHT, "shader/framebuffer/shader.fs", 10.0, 0.3, 10);
+    Metaballs* metaballs = new Metaballs(WINDOW_WIDTH, WINDOW_HEIGHT, "shader/framebuffer/shader.fs", 10.0, 0.2, 10);
 
     float lastTime = glfwGetTime();
     float time = glfwGetTime();
@@ -38,6 +41,8 @@ int main(){
         fps++;
         deltaTime = glfwGetTime() - lastTime;
         lastTime = glfwGetTime();
+
+        //reset fps counter every second
         if(glfwGetTime() - time > 1){
             std::cout << "FPS: " << fps << std::endl;
             time = glfwGetTime();
@@ -46,11 +51,11 @@ int main(){
         //handle user input
         processInput(window.getWindow());
 
+        //clear the frame buffer
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        //TODO: draw something
-        
+        //draw the meta balls
         metaballs->draw(deltaTime);
     
         //swap drawing buffer
@@ -59,7 +64,7 @@ int main(){
         glfwPollEvents();
     }
 
-    // first delete all VBOs & RBOs
+    // first delete all VBOs & RBOs, then exit the context
     delete metaballs;
     glfwTerminate();
     return EXIT_SUCCESS;

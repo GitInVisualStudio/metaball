@@ -1,7 +1,7 @@
 #version 330 core
 out vec4 FragColor;
   
-in vec2 Color;
+in vec3 Color;
 in vec2 Pos;
 
 #define MAX_BALL_LENGTH 32
@@ -11,14 +11,23 @@ uniform float threshold;
 uniform float scale;
 uniform float ball_length;
 
+/**
+* returns the implicit function of all the balls
+*/
 float implicit(vec2 pos);
 
 void main()
 {
     float value = implicit(Pos);
+
+    // difference to our wanted scale of the implicit function
     float dif = value - scale;
-    if (sqrt(dif * dif) < threshold) {
-        FragColor = vec4(Color, 0.0, 1.0);
+    /**
+    * if the function at the current position is within a specified threshold we will draw the color
+    * otherwise we just draw black
+    */
+    if (dif * dif < threshold * threshold) {
+        FragColor = vec4(Color, 1.0);
     } else {
         FragColor = vec4(0, 0, 0, 1.0);
     }
@@ -27,6 +36,7 @@ void main()
 
 float implicit(vec2 pos) {
     float sum = 0;
+    // just the sum of each implicit function of the ball
     for (int i = 0; i < ball_length; i++) {
         sum += radius[i] / length(pos - balls[i]);
     }
