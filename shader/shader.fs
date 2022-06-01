@@ -26,10 +26,13 @@ void main()
     * if the function at the current position is within a specified threshold we will draw the color
     * otherwise we just draw black
     */
-    if (dif * dif < threshold * threshold) {
-        FragColor = vec4(Color, 1.0);
+    if (dif > 0) {
+        if (dif > 1) {
+            dif = 1/(dif*dif);
+        }
+        FragColor = vec4(Color * dif + Color * 0.3, 1.0);
     } else {
-        FragColor = vec4(0, 0, 0, 1.0);
+        FragColor = vec4(Color * 0.3, 1.0);
     }
 }  
 
