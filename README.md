@@ -2,7 +2,7 @@
 
 This repo is simple approche to draw metaballs with the help of OpenGL. Nothing special and purely educational.
 
-<img src="https://i.imgur.com/X1y5gQ7.png" alt="preview" width="300"/>
+<img src="https://i.imgur.com/J2LQ3Fn.png" alt="preview" width="300"/>
 
 You can change the number of balls and other factors easily in ```main.cpp:34``` 
 
